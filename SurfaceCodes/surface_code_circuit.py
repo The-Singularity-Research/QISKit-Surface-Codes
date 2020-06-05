@@ -2,8 +2,8 @@ from typing import Tuple
 
 from qiskit.circuit import QuantumCircuit, QuantumRegister, ClassicalRegister
 
-from surface_code_class import SurfaceCodeGraph
-from utilites import permlist_to_tuple
+from SurfaceCodes.surface_code_class import SurfaceCodeGraph
+from SurfaceCodes.utilites import permlist_to_tuple
 
 
 class SurfaceCodeCircuit(QuantumCircuit):

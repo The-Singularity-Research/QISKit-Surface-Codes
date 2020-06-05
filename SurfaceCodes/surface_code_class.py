@@ -5,7 +5,7 @@ from networkx import MultiGraph
 from networkx import nx
 from sympy.combinatorics import Permutation
 
-from utilites import permlist_to_tuple
+from SurfaceCodes.utilites import permlist_to_tuple
 
 
 class SurfaceCodeGraph(MultiGraph):
