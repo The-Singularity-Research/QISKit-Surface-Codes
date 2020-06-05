@@ -100,3 +100,6 @@ and arbitrary stabilizer codes efficiently into graph states
 or surface codes will likely be useful and is something we are 
 likely to focus on in the future.
 
+For supplementary material explaining some of the theoretical 
+aspects of surface codes, see the following [notebook](https://github.com/The-Singularity-Research/Surface-Codes)
+
