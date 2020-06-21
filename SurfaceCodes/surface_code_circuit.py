@@ -21,11 +21,11 @@ class SurfaceCodeCircuit(QuantumCircuit):
         given by sigma, alpha, and phi
         Create quantum and classical registers based on the number of nodes in G
         '''
-        f = self.scgraph.compute_phi(self.sigma, self.alpha)
-        phi = permlist_to_tuple(f)
+        # f = self.scgraph.compute_phi()
+        self.phi = self.scgraph.phi
 
-        self.qr = QuantumRegister(len(self.scgraph.nodes))
-        self.cr = ClassicalRegister(len(self.scgraph.nodes))
+        self.qr = QuantumRegister(len(self.scgraph.code_graph.nodes))
+        self.cr = ClassicalRegister(len(self.scgraph.code_graph.nodes))
         self.circ = QuantumCircuit(self.qr, self.cr)
 
         self.node_info = self.scgraph.node_info
@@ -34,7 +34,7 @@ class SurfaceCodeCircuit(QuantumCircuit):
         for cycle in self.sigma:
             self.circ.h(self.sigma_dict[cycle])
 
-        for cycle in phi:
+        for cycle in self.phi:
             self.circ.h(self.phi_dict[cycle])
 
     def x_measurement(self, qubit: int, cbit: int):
@@ -54,7 +54,7 @@ class SurfaceCodeCircuit(QuantumCircuit):
         :return:  self.circ, self.scgraph, self.node_info
         """
 
-        for node in self.scgraph.neighbors(vertex):
+        for node in self.scgraph.code_graph.neighbors(vertex):
             self.circ.cx(self.sigma_dict[vertex], self.alpha_dict[node])
 
         self.circ.barrier()
@@ -70,7 +70,7 @@ class SurfaceCodeCircuit(QuantumCircuit):
         :return:
         """
 
-        for node in self.scgraph.neighbors(vertex):
+        for node in self.scgraph.code_graph.neighbors(vertex):
             self.circ.cz(self.phi_dict[vertex], self.alpha_dict[node])
 
         self.circ.barrier()
