@@ -1,8 +1,13 @@
 # Surface Codes and Error Correction
-## Current Capabilities 
 
 A good introductory video on closely related work at IBM can be found here: 
 - [A graph-based formalism for surface codes and twists](https://www.youtube.com/watch?v=Ca85qdptceQ)
+
+For an introduction on how to use this library see the following notebook:
+
+- [Surface Code Tutorial II](https://github.com/The-Singularity-Research/QISKit-Surface-Codes/blob/master/surface_code_tutorial_2.ipynb)
+
+## Current Capabilities 
 
 This package implements general "*surface codes*" which 
 generalize A. Kitaev's toric code for quantum error 
