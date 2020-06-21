@@ -65,7 +65,7 @@ class SurfaceCodeCircuit(QuantumCircuit):
 
     def face_syndrome_measure(self, vertex: Tuple[int]):
         """
-        Applies CZ gates to surrounding qubits of a face then measures face qubit in X-basis
+        Applies CZ gates to surrounding qubits on the boundary of a face then measures face qubit in X-basis
         :param vertex:
         :return:
         """
