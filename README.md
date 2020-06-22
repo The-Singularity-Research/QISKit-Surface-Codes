@@ -11,7 +11,11 @@ For an introduction on how to use this library see the following notebook:
 
 This package implements general "*surface codes*" which 
 generalize A. Kitaev's toric code for quantum error 
-correction. In particular, any code specified by a 
+correction pictured below. 
+
+![Torus Code](Use Case Examples/torus_code.png)
+
+In particular, any code specified by a 
 bipartite graph cellularly embedded in a compact Riemann
 surface can be constructed using this package. Obviously error
 correction is necessary for fault tolerant quantum computing
