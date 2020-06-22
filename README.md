@@ -22,7 +22,7 @@ A more general example of a graph embedded on a torus that gives a surface code 
 However, our construction is even more general than this and allows 
 arbitrary graphs on surfaces of arbitrary genus. 
 In particular, any code specified by a 
-bipartite graph cellularly embedded in a compact Riemann
+graph cellularly embedded in a compact Riemann
 surface can be constructed using this package. The topological 
 interpretation can be summed up in the following table (pg. 68):
 
