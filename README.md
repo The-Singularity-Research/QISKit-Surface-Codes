@@ -13,7 +13,7 @@ This package implements general "*surface codes*" which
 generalize A. Kitaev's toric code for quantum error 
 correction pictured below. 
 
-![Torus Code](/Use Case Examples/torus_code.png)
+![Torus Code](https://github.com/The-Singularity-Research/QISKit-Surface-Codes/blob/master/Use%20Case%20Examples/torus_code.png)
 
 In particular, any code specified by a 
 bipartite graph cellularly embedded in a compact Riemann
