@@ -11,13 +11,18 @@ For an introduction on how to use this library see the following notebook:
 
 This package implements general "*surface codes*" which 
 generalize A. Kitaev's toric code for quantum error 
-correction pictured below. 
+correction pictured below (see pg. 67 of [Quantum Computation with Topological Codes: from qubit to topological fault-tolerance](https://arxiv.org/pdf/1504.01444.pdf)). 
 
 ![Torus Code](https://github.com/The-Singularity-Research/QISKit-Surface-Codes/blob/master/Use%20Case%20Examples/torus_code.png)
 
 In particular, any code specified by a 
 bipartite graph cellularly embedded in a compact Riemann
-surface can be constructed using this package. Obviously error
+surface can be constructed using this package. The topological 
+interpretation can be summed up in the following table (pg. 68):
+
+![Table](https://github.com/The-Singularity-Research/QISKit-Surface-Codes/blob/master/Use%20Case%20Examples/table.png)
+
+Obviously error
 correction is necessary for fault tolerant quantum computing
 and surface codes are one of the best studied, most
 robust, and most easily implemented types of error 
