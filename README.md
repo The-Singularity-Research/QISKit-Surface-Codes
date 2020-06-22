@@ -15,6 +15,12 @@ correction pictured below (see pg. 67 of [Quantum Computation with Topological C
 
 ![Torus Code](https://github.com/The-Singularity-Research/QISKit-Surface-Codes/blob/master/Use%20Case%20Examples/torus_code.png)
 
+A more general example of a graph embedded on a torus that gives a surface code can be seen below, 
+
+<a href="https://www.researchgate.net/figure/A-graph-embedded-on-a-toroidal-surface-Highlighted-are-example-basis-vectors-from-a-a_fig2_266972115"><img src="https://www.researchgate.net/profile/Carl_Modes/publication/266972115/figure/fig2/AS:667811957440518@1536230186800/A-graph-embedded-on-a-toroidal-surface-Highlighted-are-example-basis-vectors-from-a-a.ppm" alt="A graph embedded on a toroidal surface. Highlighted are example basis vectors from (a) a fundamental cycle basis and (b) a minimum weight basis. Red: some representative tiling basis vectors. Blue and orange: basis vectors that correspond to the 2g = 2 generators of the fundamental group of the torus."/></a>
+
+However, our construction is even more general than this and allows 
+arbitrary graphs on surfaces of arbitrary genus. 
 In particular, any code specified by a 
 bipartite graph cellularly embedded in a compact Riemann
 surface can be constructed using this package. The topological 
