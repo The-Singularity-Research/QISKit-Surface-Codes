@@ -28,7 +28,7 @@ class SurfaceCodeCircuit(QuantumCircuit):
         self.cr = ClassicalRegister(len(self.scgraph.code_graph.nodes))
         self.circ = QuantumCircuit(self.qr, self.cr)
 
-        self.node_info = self.scgraph.node_info
+        self.node_info = self.scgraph.node_dict 
         self.sigma_dict, self.alpha_dict, self.phi_dict = self.node_info
 
         for cycle in self.sigma:
