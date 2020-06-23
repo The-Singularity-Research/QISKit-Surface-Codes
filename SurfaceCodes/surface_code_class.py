@@ -154,3 +154,67 @@ class SurfaceCodeGraph(MultiGraph):
         """
         g = int(-(len(self.phi) - len(self.alpha) + len(self.sigma) - 2) / 2)
         return (g)
+
+    def draw(self, node_type=''):
+        """
+        Draw graph with vertices, edges, and faces labeled by colored nodes and their integer indices
+        corresponding to the qubit indices for the surface code
+        """
+        if not node_type in ['cycles', 'dict']:
+            raise ValueError('node_type can be "cycles" or "dict"')
+
+        pos = nx.spring_layout(self.code_graph)
+        # white nodes
+        nx.draw_networkx_nodes(self.code_graph, pos,
+                               nodelist=list(self.alpha),
+                               node_color='c',
+                               node_size=500,
+                               alpha=0.3)
+        # vertex nodes
+        nx.draw_networkx_nodes(self.code_graph, pos,
+                               nodelist=list(self.sigma),
+                               node_color='b',
+                               node_size=500,
+                               alpha=0.6)
+        # face nodes
+        nx.draw_networkx_nodes(self.code_graph, pos,
+                               nodelist=list(self.phi),
+                               node_color='r',
+                               node_size=500,
+                               alpha=0.6)
+        # edges
+        nx.draw_networkx_edges(self.code_graph, pos, width=1.0, alpha=0.5)
+
+        labels = {}
+
+        if node_type == 'cycles':
+            '''
+            label nodes the cycles of sigma, alpha, and phi
+            '''
+            for node in self.alpha_dict:
+                # stuff = self.alpha_dict[node]
+                labels[node] = f'$e$({node})'
+            for node in self.sigma_dict:
+                # something = self.sigma_dict[node]
+                labels[node] = f'$v$({node})'
+            for node in self.phi_dict:
+                # something2 = self.phi_dict[node]
+                labels[node] = f'$f$({node})'
+            nx.draw_networkx_labels(self.code_graph, pos, labels, font_size=12)
+
+        if node_type == 'dict':
+            '''
+            label nodes with v, e, f and indices given by node_dict corresponding to
+            qubit indices of surface code
+            '''
+
+            for node in self.alpha_dict:
+                # stuff = self.alpha_dict[node]
+                labels[node] = f'$e$({self.alpha_dict[node]})'
+            for node in self.sigma_dict:
+                # something = self.sigma_dict[node]
+                labels[node] = f'$v$({self.sigma_dict[node]})'
+            for node in self.phi_dict:
+                # something2 = self.phi_dict[node]
+                labels[node] = f'$f$({self.phi_dict[node]})'
+            nx.draw_networkx_labels(self.code_graph, pos, labels, font_size=12)
