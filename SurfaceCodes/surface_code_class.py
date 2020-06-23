@@ -218,3 +218,6 @@ class SurfaceCodeGraph(MultiGraph):
                 # something2 = self.phi_dict[node]
                 labels[node] = f'$f$({self.phi_dict[node]})'
             nx.draw_networkx_labels(self.code_graph, pos, labels, font_size=12)
+
+        plt.savefig("labels_and_colors.png")  # save as png
+        plt.show()  # display
