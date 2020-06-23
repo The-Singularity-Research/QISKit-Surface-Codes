@@ -74,6 +74,23 @@ class SurfaceCodeGraph(MultiGraph):
             self.alpha_dict[pair] = count
         return tuple([self.sigma_dict, self.alpha_dict, self.phi_dict])
 
+    def boundary_1(self, edge):
+        """
+        compute boundary of a single edge given by a white node (cycle in alpha)
+        """
+        boundary1 = [node for node in self.code_graph.neighbors(edge) if node in self.sigma_dict]
+        return boundary1
+
+    def del_1(self, edges: List[Tuple[int]]):
+        """
+        boundary of a list of edges, i.e. an arbitrary 1-chain over Z/2Z
+        """
+
+        boundary_list = [self.boundary_1(edge) for edge in edges]
+        a = Counter([y for x in boundary_list for y in x])
+        boundary_list = [x[0] for x in a.items() if x[1] % 2 == 1]
+        return boundary_list
+
     def boundary_2(self, face):
         """
         compute boundary of a single face
@@ -107,10 +124,33 @@ class SurfaceCodeGraph(MultiGraph):
         coboundary_list = [x[0] for x in a.items() if x[1] % 2 == 1]
         return coboundary_list
 
+    def coboundary_2(self, edge):
+        """
+        compute coboundary of a single edge given by a white node (cycle in alpha)
+        """
+        coboundary2 = [node for node in self.code_graph.neighbors(edge) if node in self.phi_dict]
+        return coboundary2
+
+    def delta_2(self, edges: List[Tuple[int]]):
+        """
+        coboundary of a list of edges, i.e. an arbitrary 1-cochain over Z/2Z
+        given by a list of cycles in alpha
+        """
+        coboundary_list = [self.coboundary_2(edge) for edge in edges]
+        a = Counter([y for x in coboundary_list for y in x])
+        coboundary_list = [x[0] for x in a.items() if x[1] % 2 == 1]
+        return coboundary_list
+
     def euler_characteristic(self):
+        """
+        Compute the Euler characteristic of the surface in which the graph is embedded
+        """
         chi = len(self.phi) - len(self.alpha) + len(self.sigma)
         return (chi)
 
     def genus(self):
+        """
+        Compute the genus of the surface in which the graph is embedded
+        """
         g = int(-(len(self.phi) - len(self.alpha) + len(self.sigma) - 2) / 2)
         return (g)
