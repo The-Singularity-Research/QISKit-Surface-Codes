@@ -15,7 +15,7 @@ correction pictured below (see pg. 67 of [[1]](https://arxiv.org/pdf/1504.01444.
 
 ![Torus Code](https://github.com/The-Singularity-Research/QISKit-Surface-Codes/blob/master/Use%20Case%20Examples/torus_code.png)
 
-A more general example of a graph embedded on a torus that gives a surface code can be seen below (taken from [2](https://www.groundai.com/project/extracting-hidden-hierarchies-in-3d-distribution-networks/1)), 
+A more general example of a graph embedded on a torus that gives a surface code can be seen below (taken from [[2]](https://www.groundai.com/project/extracting-hidden-hierarchies-in-3d-distribution-networks/1)), 
 
 <a href="https://www.researchgate.net/figure/A-graph-embedded-on-a-toroidal-surface-Highlighted-are-example-basis-vectors-from-a-a_fig2_266972115"><img src="https://www.researchgate.net/profile/Carl_Modes/publication/266972115/figure/fig2/AS:667811957440518@1536230186800/A-graph-embedded-on-a-toroidal-surface-Highlighted-are-example-basis-vectors-from-a-a.ppm" alt="A graph embedded on a toroidal surface. Highlighted are example basis vectors from (a) a fundamental cycle basis and (b) a minimum weight basis. Red: some representative tiling basis vectors. Blue and orange: basis vectors that correspond to the 2g = 2 generators of the fundamental group of the torus."/></a>
 
