@@ -7,7 +7,7 @@ A good introductory video on closely related work at IBM can be found here:
 
 For an introduction on how to use this library see the following notebook:
 
-- [Surface Code Tutorial II](https://github.com/The-Singularity-Research/QISKit-Surface-Codes/blob/master/surface_code_tutorial_2.ipynb)
+- [Surface Code Tutorial II](https://github.com/The-Singularity-Research/QISKit-Surface-Codes/blob/master/Use%20Case%20Examples/surface_code_tutorial_2.ipynb)
 
 ## Current Capabilities 
 
