@@ -95,3 +95,31 @@ class SurfaceCodeCircuit(QuantumCircuit):
         coboundary_nodes = self.scgraph.delta_1(stars)
         for node in coboundary_nodes:
             self.circ.x(self.alpha_dict[node])
+
+
+    def X_1_chain(self, edges):
+        """
+        Pauli product X operator for arbitrary 1-cochain given by
+        a list of edges
+        """
+        for edge in edges:
+            self.circ.x(self.alpha_dict[edge])
+
+
+    def Z_1_chain(self, edges):
+        """
+        Pauli product Z operator for arbitrary 1-chain given by
+        a list of edges
+        """
+        for edge in edges:
+            self.circ.z(self.alpha_dict[edge])
+
+
+    def draw_graph(self, node_type=''):
+        """
+        Draw the graph corresponding to the surface code
+        """
+        if node_type == 'cycles':
+            self.scgraph.draw('cycles')
+        if node_type == 'dict':
+            self.scgraph.draw('dict')
