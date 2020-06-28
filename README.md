@@ -1,4 +1,6 @@
 # Surface Codes and Error Correction
+For a general overview without too many technical requirements, see the 
+- [Medium article](https://medium.com/@thesingularity.research/topological-quantum-computing-334ff0e36c29)
 
 A good introductory video on closely related work at IBM can be found here: 
 - [A graph-based formalism for surface codes and twists](https://www.youtube.com/watch?v=Ca85qdptceQ)
