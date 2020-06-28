@@ -155,7 +155,7 @@ class SurfaceCodeGraph(MultiGraph):
         g = int(-(len(self.phi) - len(self.alpha) + len(self.sigma) - 2) / 2)
         return (g)
 
-    def draw(self, node_type=''):
+    def draw(self, node_type='', layout=''):
         """
         Draw graph with vertices, edges, and faces labeled by colored nodes and their integer indices
         corresponding to the qubit indices for the surface code
@@ -163,7 +163,21 @@ class SurfaceCodeGraph(MultiGraph):
         if not node_type in ['cycles', 'dict']:
             raise ValueError('node_type can be "cycles" or "dict"')
 
-        pos = nx.spring_layout(self.code_graph)
+        if layout == 'spring':
+            pos = nx.spring_layout(self.code_graph)
+        if layout == 'spectral':
+            pos = nx.spectral_layout(self.code_graph)
+        if layout == 'planar':
+            pos = nx.planar_layout(self.code_graph)
+        if layout == 'shell':
+            pos = nx.shell_layout(self.code_graph)
+        if layout == 'circular':
+            pos = nx.circular_layout(self.code_graph)
+        if layout == 'spiral':
+            pos = nx.spiral_layout(self.code_graph)
+        if layout == 'random':
+            pos = nx.random_layout(self.code_graph)
+
         # white nodes
         nx.draw_networkx_nodes(self.code_graph, pos,
                                nodelist=list(self.alpha),
@@ -219,5 +233,6 @@ class SurfaceCodeGraph(MultiGraph):
                 labels[node] = f'$f$({self.phi_dict[node]})'
             nx.draw_networkx_labels(self.code_graph, pos, labels, font_size=12)
 
-        plt.savefig("labels_and_colors.png")  # save as png
+        # plt.axis('off')
+        # plt.savefig("labels_and_colors.png") # save as png
         plt.show()  # display

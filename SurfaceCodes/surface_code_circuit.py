@@ -115,11 +115,22 @@ class SurfaceCodeCircuit(QuantumCircuit):
             self.circ.z(self.alpha_dict[edge])
 
 
-    def draw_graph(self, node_type=''):
-        """
-        Draw the graph corresponding to the surface code
-        """
+    def draw_graph(self, node_type='', layout = ''):
+        if layout == 'spring':
+            pos=nx.spring_layout(self.scgraph.code_graph)
+        if layout == 'spectral':
+            pos=nx.spectral_layout(self.scgraph.code_graph)
+        if layout == 'planar':
+            pos=nx.planar_layout(self.scgraph.code_graph)
+        if layout == 'shell':
+            pos=nx.shell_layout(self.scgraph.code_graph)
+        if layout == 'circular':
+            pos=nx.circular_layout(self.scgraph.code_graph)
+        if layout == 'spiral':
+            pos=nx.spiral_layout(self.scgraph.code_graph)
+        if layout == 'random':
+            pos=nx.random_layout(self.scgraph.code_graph)
         if node_type == 'cycles':
-            self.scgraph.draw('cycles')
+            self.scgraph.draw('cycles', layout)
         if node_type == 'dict':
-            self.scgraph.draw('dict')
+            self.scgraph.draw('dict', layout)
